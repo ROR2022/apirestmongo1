@@ -20,7 +20,7 @@ app.get('/', (req,res)=>{
 })
 
 mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect("mongodb+srv://ror2022:Orimar20@clusterror2022.qcff4.mongodb.net/myapi2?retryWrites=true&w=majority")
     .then(()=> console.log('Conected to MongoDB'))
     .catch((err)=> console.log(err));
 
