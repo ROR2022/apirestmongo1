@@ -4,7 +4,7 @@ const userSchema = require('../models/user.js')
 
 // create user
 
-router.post('/users',(req,res)=>{
+router.post('/market',(req,res)=>{
     //res.send('My API create user');
 
     const user = userSchema(req.body);
@@ -14,7 +14,7 @@ router.post('/users',(req,res)=>{
 });
 
 // get all users
-router.get('/users',(req,res)=>{
+router.get('/market',(req,res)=>{
     //res.send('My API create user');
 
     userSchema
@@ -25,7 +25,7 @@ router.get('/users',(req,res)=>{
 
 // get a user
 
-router.get("/users/:phone",(req,res)=>{
+router.get("/market/:phone",(req,res)=>{
     const { phone } = req.params;
     userSchema
         .findOne({phone: phone})
@@ -36,7 +36,7 @@ router.get("/users/:phone",(req,res)=>{
 
 // update a user
 
-router.put('/users/:phone', (req,res)=>{
+router.put('/market/:phone', (req,res)=>{
     const { phone } = req.params;
     const { title, subtitle, email, category  } = req.body;
 
@@ -48,7 +48,7 @@ router.put('/users/:phone', (req,res)=>{
 
 // delete a user
 
-router.delete('/users/:phone', (req,res)=>{
+router.delete('/market/:phone', (req,res)=>{
     const { phone } = req.params;
     
 
