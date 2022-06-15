@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    age: {
+    phone: {
         type: Number,
         required: true
     },
+    title: {
+        type: String
+    },
+    subtitle:{
+        type: String
+    },
     email: {
-        type: String,
-        required: true
+        type: String
+    },
+    category:{
+        type: String
     }
 });
 
-module.exports = mongoose.model('user',userSchema);
+module.exports = mongoose.model('comercio',userSchema);

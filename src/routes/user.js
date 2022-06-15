@@ -25,10 +25,10 @@ router.get('/users',(req,res)=>{
 
 // get a user
 
-router.get("/users/:id",(req,res)=>{
-    const { id } = req.params;
+router.get("/users/:phone",(req,res)=>{
+    const { phone } = req.params;
     userSchema
-        .findById(id)
+        .findOne({phone: phone})
         .then((data)=> res.json(data))
         .catch((err)=> res.json({message: err}));
 });
@@ -36,24 +36,24 @@ router.get("/users/:id",(req,res)=>{
 
 // update a user
 
-router.put('/users/:id', (req,res)=>{
-    const { id } = req.params;
-    const { name, age, email } = req.body;
+router.put('/users/:phone', (req,res)=>{
+    const { phone } = req.params;
+    const { title, subtitle, email, category  } = req.body;
 
     userSchema
-        .updateOne({ _id: id}, {$set: {name, age, email}})
+        .updateOne({ phone: phone}, {$set: {title, subtitle, email, category}})
         .then((data)=> res.json(data))
         .catch((err)=> res.json({message: err}));
 });
 
 // delete a user
 
-router.delete('/users/:id', (req,res)=>{
-    const { id } = req.params;
+router.delete('/users/:phone', (req,res)=>{
+    const { phone } = req.params;
     
 
     userSchema
-        .deleteOne({ _id: id})
+        .deleteOne({ phone: phone})
         .then((data)=> res.json(data))
         .catch((err)=> res.json({message: err}));
 });
