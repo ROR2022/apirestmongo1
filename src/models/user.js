@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
     subtitle:{
         type: String
     },
-    email: {
+    local: {
         type: String
     },
     category:{
