@@ -19,6 +19,12 @@ const userSchema = mongoose.Schema({
     },
     category:{
         type: String
+    },
+    servicio:{
+        type: String
+    },
+    diseno: {
+        type: String
     }
 });
 
