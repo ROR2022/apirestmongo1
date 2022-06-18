@@ -38,10 +38,10 @@ router.get("/market/:phone",(req,res)=>{
 
 router.put('/market/:phone', (req,res)=>{
     const { phone } = req.params;
-    const { title, subtitle, local, category, servicio, diseno } = req.body;
+    const { title, subtitle, local, description, category, servicio, diseno } = req.body;
 
     userSchema
-        .updateOne({ phone: phone}, {$set: {title, subtitle, local, category, servicio, diseno}})
+        .updateOne({ phone: phone}, {$set: {title, subtitle, local, description, category, servicio, diseno}})
         .then((data)=> res.json(data))
         .catch((err)=> res.json({message: err}));
 });
